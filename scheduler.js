@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch(err => console.error("❌ DB connection failed", err));
 
 // Cron job: 9 AM IST daily
-cron.schedule('33 10 * * *', async () => {
+cron.schedule('01 00 * * *', async () => {
   const today = new Date().toISOString().slice(0, 10);
   console.log(`⏰ Checking for birthdays on ${today}`);
 
